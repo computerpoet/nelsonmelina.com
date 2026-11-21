@@ -1,0 +1,137 @@
+/* Layout A: one column, offer first, numbered sections, the record as a scannable list. */
+
+.hero, main {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-inline: var(--gap);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(10rem, 7rem + 9vw, 15rem);
+  gap: var(--gap);
+  align-items: start;
+  padding-top: clamp(2.5rem, 1rem + 5vw, 6rem);
+  padding-bottom: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+}
+.name {
+  margin: 0 0 1rem;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 650;
+  font-size: 1.15em;
+  color: var(--accent);
+}
+h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.3rem);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.also {
+  margin: 0.7rem 0 0;
+  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.5rem);
+  line-height: 1.25;
+  color: var(--accent);
+  font-weight: 500;
+}
+.proof {
+  margin: 1.4rem 0 0;
+  max-width: 34em;
+  color: var(--ink);
+}
+.cta { margin: 1.75rem 0 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.portrait { margin: 0; }
+.portrait img { aspect-ratio: 2 / 3; }
+
+section { padding-bottom: clamp(2.5rem, 1.5rem + 3vw, 4rem); }
+h2 {
+  margin: 0 0 1.5rem;
+  padding-top: 0.6rem;
+  border-top: 2px solid var(--ink);
+  font-size: 1em;
+  font-weight: 700;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.07em;
+}
+h2 .num {
+  color: var(--accent);
+  font-variant-numeric: lining-nums tabular-nums;
+  margin-right: 0.6em;
+}
+
+/* Work with me */
+.offers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.offers h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.35em;
+  line-height: 1.15;
+  font-weight: 650;
+}
+.offers p { margin: 0 0 0.6rem; }
+.offers a { color: var(--accent); font-weight: 650; }
+
+.now { margin: 0; max-width: 40em; font-size: 1.1em; }
+
+/* Record, talks, writing: one row per entry */
+.record { list-style: none; margin: 0; padding: 0; }
+.record li {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 14rem) minmax(0, 1fr);
+  grid-template-areas: "date org what" "date role what";
+  column-gap: var(--gap);
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--hair);
+}
+.record li:first-child { border-top: 0; padding-top: 0.2rem; }
+.record .date { grid-area: date; color: var(--muted); }
+.record .org { grid-area: org; font-weight: 650; line-height: 1.3; }
+.record .role { grid-area: role; color: var(--muted); font-size: 0.92em; line-height: 1.3; }
+.record .what { grid-area: what; }
+
+.mail {
+  margin: 0 0 1rem;
+  font-size: clamp(1.4rem, 1rem + 2vw, 2.3rem);
+  font-weight: 600;
+}
+.mail a { color: var(--accent); text-decoration-thickness: 2px; }
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  font-weight: 600;
+}
+
+@media (max-width: 56rem) {
+  .offers { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .record li {
+    grid-template-columns: 6rem minmax(0, 1fr);
+    grid-template-areas: "date org" "date role" "date what";
+  }
+  .record .what { margin-top: 0.3rem; }
+}
+@media (max-width: 40rem) {
+  .hero { grid-template-columns: minmax(0, 1fr) 5.5rem; gap: 1rem; padding-top: 1.75rem; align-items: start; }
+  .hero-text { display: contents; }
+  .name { grid-column: 1; grid-row: 1; align-self: center; margin: 0; }
+  .portrait { grid-column: 2; grid-row: 1; }
+  .portrait img { aspect-ratio: 1 / 1; object-position: 50% 12%; }
+  h1, .also, .proof, .cta { grid-column: 1 / -1; }
+  .record li {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "date" "org" "role" "what";
+  }
+}
