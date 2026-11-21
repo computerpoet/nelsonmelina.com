@@ -47,6 +47,7 @@ h1 {
 .portrait { margin: 0; }
 .portrait img { aspect-ratio: 2 / 3; }
 
+section, .offers li { scroll-margin-top: 1rem; }
 section { padding-bottom: clamp(2.5rem, 1.5rem + 3vw, 4rem); }
 h2 {
   margin: 0 0 1.5rem;
@@ -69,7 +70,7 @@ h2 .num {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--gap);
 }
 .offers h3 {
@@ -79,7 +80,9 @@ h2 .num {
   font-weight: 650;
 }
 .offers p { margin: 0 0 0.6rem; }
-.offers a { color: var(--accent); font-weight: 650; }
+.offers a { color: var(--accent); font-weight: 650; display: inline-block; padding-block: 0.45em; }
+.work-mail { margin: 0 0 1.5rem; max-width: 40em; }
+.work-mail a { color: var(--accent); font-weight: 650; }
 
 .now { margin: 0; max-width: 40em; font-size: 1.1em; }
 

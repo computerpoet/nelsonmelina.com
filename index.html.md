@@ -6,8 +6,12 @@ The site is one page: https://nelsonmelina.com/
 
 ## What he does
 
-- Advisory on payments, self-custody and tokenized assets.
-- Fractional CTO: part-time technical direction for a small team.
+Email: nelson@nelsonmelina.com. Prices are not on the page.
+
+- Second opinion: one 60-minute call on one decision. Written summary within 24 hours.
+- Architecture and risk review: one system or decision, about two weeks. Written risks, a recommendation, a readout, and one round of corrections.
+- Advisor: up to 10 hours a month. Two calls, replies within one business day, and a monthly decision log.
+- Fractional CTO: one day a week. Roadmap, engineering lead, hiring, and board updates.
 - Talks and podcasts on co-ownership, payments and self-custody.
 
 ## Now
